@@ -1,0 +1,239 @@
+/* ── HERO ─────────────────────────────────── */
+.hero {
+  min-height: 88vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  transition: background 1.2s ease;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 60px;
+  align-items: center;
+  padding: 80px 24px;
+  position: relative;
+  z-index: 1;
+}
+.hero-text { color: #fff; }
+.hero-badge { margin-bottom: 20px; background: rgba(255,255,255,.15); color: #fff; }
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  animation: fadeUp 0.7s ease both;
+}
+.hero-sub {
+  font-size: 1.15rem;
+  opacity: 0.85;
+  max-width: 520px;
+  margin-bottom: 36px;
+  line-height: 1.7;
+  animation: fadeUp 0.7s 0.1s ease both;
+}
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  animation: fadeUp 0.7s 0.2s ease both;
+}
+.hero-btn-ghost {
+  border: 2px solid rgba(255,255,255,.4);
+  color: #fff;
+  border-radius: var(--radius-sm);
+}
+.hero-btn-ghost:hover { background: rgba(255,255,255,.12); border-color: #fff; }
+
+.hero-card {
+  background: rgba(255,255,255,.12);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  color: #fff;
+  animation: fadeUp 0.7s 0.3s ease both;
+}
+.hero-card-inner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 0;
+}
+.hero-icon { font-size: 1.8rem; }
+.hero-card-inner strong { display: block; font-size: 0.95rem; margin-bottom: 2px; }
+.hero-card-inner span  { font-size: 0.82rem; opacity: 0.7; }
+.hero-divider { border: none; border-top: 1px solid rgba(255,255,255,.15); margin: 4px 0; }
+
+.hero-dots {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 2;
+}
+.hero-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.4);
+  transition: all var(--transition);
+}
+.hero-dot--active {
+  background: #fff;
+  width: 24px;
+  border-radius: 4px;
+}
+
+/* ── STATS ────────────────────────────────── */
+.stats-bar {
+  background: var(--charcoal);
+  padding: 28px 24px;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  text-align: center;
+}
+.stat strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+}
+.stat span {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,.6);
+  margin-top: 4px;
+}
+
+/* ── SECTIONS ─────────────────────────────── */
+.section { padding: 80px 0; }
+.section--gray { background: var(--gray-light); }
+.section--blue { background: var(--primary-blue); }
+.section-head {
+  text-align: center;
+  margin-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.section-cta { text-align: center; margin-top: 40px; }
+
+/* ── SERVICES ─────────────────────────────── */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.service-card {
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+}
+.service-card h3 { font-size: 1.1rem; font-weight: 700; }
+.service-card p { font-size: 0.88rem; color: var(--gray-mid); flex: 1; }
+.service-icon { font-size: 2rem; margin-bottom: 4px; }
+.service-arrow {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  color: var(--primary-blue);
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: all var(--transition);
+}
+.service-card:hover .service-arrow { opacity: 1; transform: translateX(4px); }
+
+/* ── DOCTORS ──────────────────────────────── */
+.doctors-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.doctor-card {
+  display: flex;
+  flex-direction: column;
+  overflow: visible !important;
+}
+.doctor-photo {
+  height: 180px;
+  background: var(--blue-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.doctor-photo img { width: 100%; height: 100%; object-fit: cover; }
+.doctor-avatar {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: var(--primary-blue);
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.doctor-info {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.doctor-info h3 { font-size: 0.98rem; font-weight: 700; }
+.doctor-title { font-size: 0.84rem; color: var(--gray-mid); }
+.doctor-btn { margin-top: 8px; text-align: center; }
+
+/* ── WHY US ───────────────────────────────── */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.why-card {
+  text-align: center;
+  color: #fff;
+  padding: 8px;
+}
+.why-icon { font-size: 2.6rem; margin-bottom: 14px; }
+.why-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+.why-card p  { font-size: 0.88rem; opacity: 0.8; line-height: 1.6; }
+
+/* ── ANIMATIONS ───────────────────────────── */
+@keyframes fadeUp {
+  from { opacity:0; transform: translateY(20px); }
+  to   { opacity:1; transform: translateY(0); }
+}
+
+/* ── RESPONSIVE ───────────────────────────── */
+@media (max-width: 1024px) {
+  .doctors-grid { grid-template-columns: repeat(2, 1fr); }
+  .why-grid     { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .hero-content { grid-template-columns: 1fr; }
+  .hero-card { display: none; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .doctors-grid { grid-template-columns: repeat(2, 1fr); }
+  .why-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .doctors-grid  { grid-template-columns: 1fr; }
+}

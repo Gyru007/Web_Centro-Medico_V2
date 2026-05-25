@@ -1,0 +1,51 @@
+.wa-widget {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 999;
+  width: 58px;
+  height: 58px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(37,211,102,.50);
+  transition: all 0.25s ease;
+  animation: wa-bounce 2s ease-in-out 2s 3;
+}
+.wa-widget:hover {
+  transform: scale(1.12);
+  box-shadow: 0 8px 28px rgba(37,211,102,.65);
+}
+.wa-tooltip {
+  position: absolute;
+  right: 70px;
+  background: var(--charcoal);
+  color: #fff;
+  font-size: 0.82rem;
+  white-space: nowrap;
+  padding: 7px 14px;
+  border-radius: 8px;
+  pointer-events: none;
+  animation: fadeIn 0.2s ease;
+}
+.wa-tooltip::after {
+  content: '';
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 6px solid transparent;
+  border-right: none;
+  border-left-color: var(--charcoal);
+}
+@keyframes wa-bounce {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+@keyframes fadeIn {
+  from { opacity:0; transform: translateX(6px); }
+  to   { opacity:1; transform: translateX(0); }
+}

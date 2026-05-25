@@ -1,0 +1,73 @@
+.servicios-hero {
+  background: linear-gradient(160deg, var(--blue-light) 0%, var(--pure-white) 100%);
+  padding: 60px 0 48px;
+  text-align: center;
+  border-bottom: 1px solid var(--gray-border);
+}
+.servicios-hero .section-title { margin: 10px 0 8px; }
+
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.servicio-item {
+  display: flex;
+  gap: 24px;
+  padding: 28px;
+  align-items: flex-start;
+}
+.servicio-icon-wrap {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-md);
+  background: var(--blue-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.servicio-icon { font-size: 2rem; }
+.servicio-body { flex: 1; }
+.servicio-nombre { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; font-family: var(--font-display); }
+.servicio-desc   { font-size: 0.9rem; color: var(--gray-mid); line-height: 1.6; margin-bottom: 8px; }
+.servicio-extra  { font-size: 0.82rem; color: var(--primary-blue); font-style: italic; margin-bottom: 14px; }
+.servicio-btn    { margin-top: 4px; }
+
+.servicios-beneficios {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.beneficio-card {
+  padding: 24px;
+  text-align: center;
+}
+.beneficio-icon { font-size: 2.4rem; margin-bottom: 14px; }
+.beneficio-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+.beneficio-card p  { font-size: 0.87rem; color: var(--gray-mid); line-height: 1.6; }
+
+.servicios-cta {
+  background: var(--primary-blue);
+  color: #fff;
+  padding: 52px 0;
+}
+.servicios-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.servicios-cta h2 { font-family: var(--font-display); font-size: 1.7rem; margin-bottom: 8px; }
+.servicios-cta p  { opacity: 0.85; }
+
+@media (max-width: 900px) {
+  .servicios-grid { grid-template-columns: 1fr; }
+  .servicios-beneficios { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .servicios-beneficios { grid-template-columns: 1fr; }
+  .servicio-item { flex-direction: column; }
+  .servicios-cta-inner { flex-direction: column; text-align: center; }
+}

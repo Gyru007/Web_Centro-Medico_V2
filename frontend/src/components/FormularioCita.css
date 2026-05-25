@@ -1,0 +1,170 @@
+.cita-form-wrapper {
+  max-width: 780px;
+  margin: 0 auto;
+  background: var(--pure-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  border: 1px solid var(--gray-border);
+}
+
+/* ── Stepper ─────────────────────────────── */
+.cita-stepper {
+  display: flex;
+  align-items: center;
+  padding: 24px 32px;
+  background: var(--gray-light);
+  border-bottom: 1px solid var(--gray-border);
+  overflow-x: auto;
+}
+.step {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+}
+.step-circle {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: var(--gray-border);
+  color: var(--gray-mid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  transition: all var(--transition);
+}
+.step--active  .step-circle { background: var(--primary-blue); color: #fff; }
+.step--done    .step-circle { background: var(--success); color: #fff; }
+.step-label {
+  font-size: 0.75rem;
+  margin-left: 8px;
+  color: var(--gray-mid);
+  white-space: nowrap;
+  font-weight: 500;
+}
+.step--active .step-label { color: var(--primary-blue); font-weight: 600; }
+.step--done   .step-label { color: var(--success); }
+.step-line {
+  flex: 1;
+  height: 2px;
+  background: var(--gray-border);
+  margin: 0 10px;
+  min-width: 20px;
+}
+.step--done .step-line { background: var(--success); }
+
+/* ── Body ────────────────────────────────── */
+.cita-body { padding: 36px 32px; }
+.cita-step h3 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  margin-bottom: 24px;
+  color: var(--charcoal);
+}
+
+/* ── Especialidad grid ───────────────────── */
+.espec-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 28px;
+}
+.espec-btn {
+  padding: 14px 12px;
+  border: 1.5px solid var(--gray-border);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--charcoal);
+  transition: all var(--transition);
+  text-align: center;
+}
+.espec-btn:hover      { border-color: var(--primary-blue); color: var(--primary-blue); background: var(--blue-light); }
+.espec-btn--active    { border-color: var(--primary-blue); background: var(--primary-blue); color: #fff; }
+
+/* ── Médico list ─────────────────────────── */
+.medico-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+.medico-opt {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  border: 1.5px solid var(--gray-border);
+  border-radius: var(--radius-sm);
+  text-align: left;
+  transition: all var(--transition);
+}
+.medico-opt:hover    { border-color: var(--primary-blue); background: var(--blue-light); }
+.medico-opt--active  { border-color: var(--primary-blue); background: var(--blue-light); }
+.medico-opt-avatar {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  background: var(--primary-blue);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.medico-opt strong { display: block; font-size: 0.92rem; }
+.medico-opt span   { font-size: 0.8rem; color: var(--gray-mid); }
+
+/* ── Row ─────────────────────────────────── */
+.cita-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+.form-group { margin-bottom: 16px; }
+
+/* ── Resumen ─────────────────────────────── */
+.cita-resumen {
+  background: var(--gray-light);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.resumen-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--gray-border);
+}
+.resumen-row:last-child { border-bottom: none; padding-bottom: 0; }
+.resumen-row span { color: var(--gray-mid); }
+.resumen-row strong { color: var(--charcoal); }
+
+/* ── Actions ─────────────────────────────── */
+.cita-actions { display: flex; justify-content: flex-end; gap: 12px; margin-top: 8px; }
+.cita-error {
+  color: var(--danger);
+  background: #FEE2E2;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  margin-bottom: 16px;
+}
+.cita-empty { color: var(--gray-mid); font-style: italic; margin-bottom: 24px; }
+
+/* ── Success ─────────────────────────────── */
+.cita-success {
+  text-align: center;
+  padding: 60px 32px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+.success-icon { font-size: 3.5rem; margin-bottom: 16px; }
+.cita-success h3 { font-family: var(--font-display); font-size: 1.6rem; margin-bottom: 12px; }
+.cita-success p  { color: var(--gray-mid); margin-bottom: 28px; line-height: 1.7; }
+
+@media (max-width: 600px) {
+  .cita-body { padding: 24px 16px; }
+  .espec-grid { grid-template-columns: repeat(2, 1fr); }
+  .cita-row { grid-template-columns: 1fr; }
+}
