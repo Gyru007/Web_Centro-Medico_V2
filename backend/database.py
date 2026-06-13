@@ -7,7 +7,7 @@ load_dotenv()
 
 DATABASE_URL = os.getenv(
     "DATABASE_URL",
-    "mysql+pymysql://root:@localhost:3306/realmendez_tg?charset=utf8mb4"
+    "mysql+pymysql://root@localhost:3306/realmendez_tg"
 )
 
 engine = create_engine(
